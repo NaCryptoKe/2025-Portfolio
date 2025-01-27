@@ -118,7 +118,7 @@ Feel free to browse through my monthly folders, check out the projects, and trac
 ---
 
 ### 📩 Connect with Me  
-📧 **Email**: [your-email@example.com](mailto:your-email@example.com)  
+📧 **Email**: [clashofnahom@gmail.com](mailto:your-email@example.com)  
 🌐 **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com)  
 
 ---
