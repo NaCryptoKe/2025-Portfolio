@@ -1,0 +1,43 @@
+Day 1: February, 01 2025. Time Taken: One Hour
+Learned C++ from bro code: https://youtu.be/-TkoO8Z07hI?si=dTz7AM-FAABazGzy
+
+Why you need to learn c++?
+C++ is fast, commonly used in advanced graphics application. Examples are adobe application, video editing softwares.
+Commonly used with embeded systems, and creating video games.
+C++ is a middle level language.
+
+Things needed to start.
+1. Text editors. VScode and the like are IDE(Integrated Development Environment), they contain a lot developer tools.
+2. Compiler is a piece of software that basically turn source code (the code we have written) to machine instructions (to binary)
+
+The extension for c++ is .cpp or .c++
+
+A comment in C++ can be written using // or /**/. It is used for helping the developer or other developer understand what is happenning in the code.
+// - is called an inline comment. And /**/ is called a multiline comment.
+
+Variables
+Variables are a particular name given to a certain value.
+There are two in creating and using a value, the first is declaration and the second is assignment.
+Declaration: [Data Type] [Variable Name]; Example: int x;
+Assignment: [Variable Name] = [Values]; Example: x = 4;
+
+We can print the output using std::cout<<x; std means the standard library, and cout means character output.
+
+There are different type of data types in C++:
+int or integer stores a whole number which basically means all numbers that don't have a floating decimal value. If the number has a decimal point C++ will remove the decimal value and just give you the floor value instead.
+Example: int x = 5;
+double are like integer but they can store floating points unlike integers.
+Example: double x = 5.5;
+char datatype stores a single character. It is assigned using the single quotation.
+Example: char x = 'A';
+boolean or bool is a datatype that only holds a true or false value. Think of like using a light switch, it can only be on or off.
+Example: bool x = true;
+This four data type are called primitive data types.
+
+strings can be regarded as a variable but it is actually an object made up of a sequence of characters.
+
+The const keyword makes a variable not changable meaning basically they are only readonly. The formal naming convention for const variables are all capital letters.
+
+A namespace: provides a solution for preventing name coflicts in large projects. Each entity needs a unique name. A namespace allows for identically named entities as long as the namespaces are different.
+namespace [Namespace name] {}
+The :: is known as the scope resolution operators.
