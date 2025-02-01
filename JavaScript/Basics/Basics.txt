@@ -1,0 +1,21 @@
+February, 01 2025. Time Taken 32 minutes
+
+Tutorial From Bro Code: https://youtu.be/lfmg-EJ8gm4?si=n93PArr2F3JcpkAL
+
+Javascript is a programming language used to create dynamic and interactive webpages. Javascript runs on a web browser.
+
+To output some text `console.log("");`
+
+To create an alert box you can write `window.alert("");`
+
+To write a comment just like in C++ we can use // inline and /**/ for a multiline
+
+document means the document of the web page.
+Basics of Javascript done.
+
+Variables are a container that stores a value. Behaves as if it were the value it contains.
+1. Declaration      let x;
+2. Assignment       x = 100;
+
+Datatypes in Javascript
+numbers, string (same as in C++), booleans are the sam as in C++
