@@ -1,5 +1,8 @@
 #include <iostream>
-
+namespace first // Declare a namespace called first
+{
+    int x = 6; // Declare a variable x and assign the value 6 with the namespace first
+}
 int main()
 {
     int x; // Declare a variable x
