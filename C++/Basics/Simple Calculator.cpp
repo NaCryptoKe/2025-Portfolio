@@ -26,19 +26,19 @@ int main()
 
         switch (op)
         {
-            case ' + ':
+            case '+':
                 result = num1 + num2;
                 break;
-            case ' - ': 
+            case '-': 
                 result = num1 - num2;
                 break;
-            case ' * ':
+            case '*':
                 result = num1 * num2;
                 break;
-            case ' / ':
+            case '/':
                 result = num1 / num2;
                 break;
-            case ' % ':
+            case '%':
                 result = (int)num1 % (int)num2;
                 break;
             default:

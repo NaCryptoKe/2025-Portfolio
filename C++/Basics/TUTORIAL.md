@@ -92,3 +92,190 @@ namespace MyNamespace {
 ---
 
 🎉 **That's it for today!** Keep coding and have fun! 🚀🔥
+
+---
+## 🚀 Day 2: February 10, 2025
+
+### ⏳ Time Taken: One Hour and 24 minutes
+
+### 📝 `typedef`
+- `typedef` is a reserved keyword used to create an additional name (alias) for another data type.
+- Helps with readability and reduces typos.
+- Example:
+  ```cpp
+  typedef std::vector<std::pair<std::string, int>> pairlist_t;
+  ```
+- A common naming convention for `typedef` is to end with `_t`.
+  ```cpp
+  pairlist_t pairlist; // Declare a vector of pairs of strings and integers
+  ```
+- **Usage:** `typedef [dataType] [newName];`
+
+### 🔥 `using` (Modern Alternative)
+- Instead of `typedef`, I should be using `using`:
+  ```cpp
+  using [newName] = [dataType];
+  ```
+- `typedef` was used for C++98/03, while `using` is used for C++11 and later.
+- `using` is the modern and more flexible alternative.
+- You can use `using` with **templates**, unlike `typedef`.
+
+### ⚖️ `using` vs `typedef`
+- `using` is more **readable** than `typedef`.
+- `using` supports **templates**.
+- `using` is modern **C++ compatible**.
+
+---
+
+### ➕ Arithmetic Operators
+- Return the result of a specific arithmetic operation (`+`, `-`, `*`, `/`, `%`).
+- Example:
+  ```cpp
+  int students = 20;
+  students = students + 1; // Same as students++; and students += 1;
+  students = students - 1; // Same as students--; and students -= 1;
+  students = students * 2; // Same as students *= 2;
+  students = students / 3; // Same as students /= 3;
+  ```
+- **Important:** When dividing and the quotient is a decimal, the decimal points are **truncated** due to the variable being an `int`. Solution: Use `float` or `double`.
+- **Modulus Operator `%`**: Returns the remainder.
+  ```cpp
+  int remainder = students % 3;
+  ```
+- **Order of Arithmetic:** `Parentheses > Exponents > Multiplication/Division > Addition/Subtraction`
+  ```cpp
+  int students = 6 - 5 + 4 * 3 / 2;
+  ```
+
+---
+
+### 🔄 Type Conversion
+- **Implicit Conversion:** Happens automatically.
+  ```cpp
+  int x = 3.14; // x will be set to 3 (truncation)
+  ```
+- **Explicit Conversion (Casting):**
+  ```cpp
+  double x = (int)3.14; // x is explicitly set to 3
+  ```
+- **Example with ASCII:**
+  ```cpp
+  char y = 100; // 'y' will be 'd' (ASCII value 100)
+  std::cout << (char)100; // Outputs 'd'
+  ```
+- **When to Use:**
+  ```cpp
+  int correct = 8;
+  int questions = 10;
+  double score = correct / (double)questions * 100;
+  std::cout << score << "%"; // Correctly prints 80%
+  ```
+
+---
+
+### 📢 `cout` and `cin`
+- `cout <<` (Insertion Operator)
+- `cin >>` (Extraction Operator)
+- If the input contains **whitespace**, use:
+  ```cpp
+  std::getline(std::cin, variable);
+  ```
+- If `cin` precedes `getline`, use:
+  ```cpp
+  std::getline(std::cin >> std::ws, variable);
+  ```
+
+---
+
+### 📐 Useful Math Functions (`#include <cmath>`) 
+- `std::max(value1, value2);` → Returns **maximum**.
+- `std::min(value1, value2);` → Returns **minimum**.
+- `pow(base, exponent);` → Returns `base^exponent`.
+- `sqrt(value);` → Returns **square root**.
+- `abs(value);` → Returns **absolute value**.
+- `round(x);` → Rounds to the nearest integer.
+- `ceil(x);` → Rounds **up**.
+- `floor(x);` → Rounds **down**.
+- 📖 [More cmath functions](https://www.cplusplus.com/reference/cmath/)
+
+---
+
+### 🔄 Conditionals
+1️⃣ **If Statement:** Executes if the condition is `true`.
+   ```cpp
+   if (condition) {
+       // Code executes
+   }
+   ```
+2️⃣ **If-Else Statement:** Executes one block if `true`, another if `false`.
+   ```cpp
+   if (condition) {
+       // Executes if true
+   } else {
+       // Executes if false
+   }
+   ```
+3️⃣ **Else-If Statement:** Multiple conditions.
+   ```cpp
+   if (condition) {
+       // Code
+   } else if (anotherCondition) {
+       // Code
+   } else {
+       // Default case
+   }
+   ```
+4️⃣ **Switch Statement:** Matches cases.
+   ```cpp
+   switch (variable) {
+       case value1:
+           // Code
+           break;
+       case value2:
+           // Code
+           break;
+       default:
+           // Code
+           break;
+   }
+   ```
+5️⃣ **Ternary Operator (`?:`)**
+   ```cpp
+   condition ? executeIfTrue : executeIfFalse;
+   x % 2 ? std::cout << "Odd" : std::cout << "Even";
+   ```
+
+---
+
+### 🔗 Logical Operators
+- `&&` (Logical AND) → Both conditions must be `true`.
+- `||` (Logical OR) → Only one condition needs to be `true`.
+- `!` (Logical NOT) → Reverses boolean value.
+
+| A     | B     | A && B | A || B |
+|-------|-------|--------|--------|
+| true  | true  | true   | true   |
+| true  | false | false  | true   |
+| false | true  | false  | true   |
+| false | false | false  | false  |
+
+| A     | !A    |
+|-------|-------|
+| true  | false |
+| false | true  |
+
+---
+
+### 📝 Useful String Methods
+```cpp
+string name;
+name.length();    // Returns length of string
+name.empty();     // Checks if string is empty
+name.clear();     // Clears string value
+name.append("text"); // Appends text
+name.at(index);   // Returns character at index
+name.insert(index, "msg"); // Inserts msg at index
+name.find(' ');   // Finds first occurrence of char
+name.erase(start, end); // Erases part of string
+```
+📖 [More string functions](https://www.cplusplus.com/reference/string/string/)
