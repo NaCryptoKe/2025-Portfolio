@@ -94,7 +94,8 @@ namespace MyNamespace {
 🎉 **That's it for today!** Keep coding and have fun! 🚀🔥
 
 ---
-## 🚀 Day 2: February 10, 2025
+
+ ## 🚀 Day 2: February 10, 2025
 
 ### ⏳ Time Taken: One Hour and 24 minutes
 
@@ -279,3 +280,119 @@ name.find(' ');   // Finds first occurrence of char
 name.erase(start, end); // Erases part of string
 ```
 📖 [More string functions](https://www.cplusplus.com/reference/string/string/)
+
+---
+
+# 🚀 Day 3: February 11, 2025
+
+**⏳ Time Taken: 40 minutes**
+
+## 🔄 Loops & Iteration
+
+Loops execute a block of code **while** a condition is `true`. If the condition is `false`, the loop stops.
+
+### 🔁 Infinite Loop
+An **infinite loop** occurs when the condition is **always true**, causing the loop to run forever!
+
+---
+
+## 🌀 Types of Loops
+
+### 1️⃣ While Loop
+Executes **while** the condition remains true.
+```cpp
+while (condition) {
+    // Statement goes here
+}
+```
+
+### 2️⃣ Do-While Loop
+- Similar to a **while loop**, but it **executes at least once** before checking the condition.
+```cpp
+do {
+    // Statement
+} while (condition); // Notice the semicolon at the end
+```
+
+### 3️⃣ For Loop
+- Used when the number of iterations is **known**.
+- Typically uses `i` as an **iterator**.
+```cpp
+for (int i = 0; i <= value; i++) { // Can increase or decrease
+    // Statement
+}
+```
+
+### 4️⃣ Nested Loops
+Loops **inside** another loop.
+```cpp
+for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 3; j++) {
+        // Inner loop statement
+    }
+}
+```
+
+---
+
+## 🚦 Jump (Loop Control) Statements
+Used to **alter the flow** of a loop.
+
+### 🔚 `break`
+Stops execution of the loop **immediately**.
+```cpp
+while (true) {
+    if (condition) break; // Exit the loop
+}
+```
+
+### ⏭ `continue`
+Skips the **current iteration** and moves to the next.
+```cpp
+for (int i = 0; i < 10; i++) {
+    if (i == 5) continue; // Skip iteration when i == 5
+    // Other code
+}
+```
+
+### 🔁 `goto`
+Jumps to a labeled statement **inside the same function**.
+```cpp
+goto flower;
+// Statements here will be skipped
+flower: 
+// Execution continues from here
+```
+
+### 🔙 `return`
+Exits from a function and can **optionally return a value**.
+```cpp
+return; // Exits function
+return 5; // Exits and returns 5
+```
+
+---
+
+## 🎲 Random Numbers
+C++ uses `rand()` to generate **pseudo-random numbers**.
+```cpp
+int num = rand(); // Gives a number between 0 and 32,767 (RAND_MAX)
+```
+
+---
+
+## 🔧 Functions: Reusable Code Blocks
+Functions **group logic** together for reusability.
+```cpp
+[returnType] functionName(parameters if necessary) {
+    // Function body
+    return something; // If returnType is not void
+}
+```
+**`void`** means the function **does not return a value**.
+
+```cpp
+void sayHello() {
+    cout << "Hello, World!";
+}
+```

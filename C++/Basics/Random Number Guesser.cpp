@@ -17,6 +17,7 @@ int main()
     int guess = 0; // Declare and initialize the variable guess to 0, which will store the user's guesses
     int tries = 0; // Declare and initialize the variable tries to 0, which will store the number of tries the user has taken
     char playAgain = 'y'; // Declare and initialize the variable playAgain to 'y', which will store the user's choice to play again
+    srand(time(NULL)); // Seed the random number generator with the current time
 
     while (playAgain == 'y') // Loop to play the game again if the user chooses to
     {
@@ -25,7 +26,7 @@ int main()
 
         std::cout << "I have a number between 1 and 100.\nCan you guess what it is?\n" ;
 
-        do // Loop to keep asking the user for guesses until they guess the correct number
+        do // Loop to keep asking the user for guesses until they guess the correct number, using do while loop to ensure the loop runs at least once
         {
             std::cout << "Enter your guess: ";
             std::cin >> guess; // Input the user's guesses

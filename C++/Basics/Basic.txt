@@ -1,154 +1,37 @@
-Day 2: February, 10 2025. Time Taken: One Hour and 24 minutes
+Day 3: February, 11 2025. Time Taken: 40 minutes
 
-typedef is a reserved keyword use to create additional name (alias) for another data type
-Helps with readability and reduces typos
-typedef std::vector<std::pair<std::string, int>> pairlist_t;
-A common naming convention for typedef is to end with _t
-
-pairlist_t pairlist; // Declare a vector of pairs of strings and integers
-
-Usage: typedef [dataType] [newName];
-
-Instead of typedef, I should be using `using`
-using [newName] = [dataType];
-
-typedef was used for C++98/03, and using is used for C++ 11 and later
-using is the modern and more flexibile alternative for typedef
-
-You can use `using` with templates unlike typedef
-
-using vs typedef
-using is more readable than typedef, supports templates, and is modern C++ compatibile
-
-Arithmetic operators: return the result of a specific arithmetic operation (+,-,*,/,%)
-
-int students = 20;
-students = students + 1; // is the same as students++; and students += 1;
-students = students - 1; // is the same as students--; and students -= 1;
-students = students * 1; // is the same as students *= 2;
-students = students / 3; // is the same as students /= 3;
-
-when dividing and the quotient is a decimal, all the decimal points are trunctuated or lost due to the variable being an int. You can solve that by making it a float or double.
-
-To get the remainder of any division we can use the modulus `%`
-int remainder = students % 3;
-
-order of arithmetic
-int students = 6 - 5 + 4 * 3 / 2; // Order of operations: Parentheses, Exponents, Multiplication and Division, Addition and Subtraction
-
-type conversion is a conversion of one data type to the other
-It can be divided into two: Implicit (automatic), and Explilcit: Preced value with new data type
-
-int x = 3.14; // will be set to 3, implicitly because the data type doesn't store decimals
-double x = (int) 3.14; // explicitly setting it to 3, because int doesn't store decimals
-
-examples: char y = 100; // this will set it to its ASCII equivalent which is `d`, this is implicit
-std::cout << (char) 100; // this is the same, but I am setting it explicitly
-
-when to use it is for situations like in the following example:
-int correct = 8;
-int questions = 10;
-double score = correct / questions * 100;
-std::cout << score << "%"; // this will print 0% because we are dividing integers, correct and questions.
-double score = correct / (double)questions * 100;
-std::cout << score << "%"; // this will print 80% because we explicitly told the system to do that.
-
-cout << (insertion operator is <<)
-cin >> (extraction operator is >>)
-
-If the input might contain white spaces use std::getline(std::cin, variable);, instead of std::cin >> variable;
-If there is a cin function above a getline function, a newline character or '\n' will be stored in the buffer and the getline will take that as input. To prevent that use `std::getline(std::cin >> std::ws, variable);`
-
-Useful math related functions
-std::max(value 1, value 2); will return the maximum
-std::min(value 1, value 2); will return the minimum
-the rest need the preprocessor #include <cmath>
-pow(value 1, value 2); this will return the value 1 raised to value 2. Example if value 1 = 2, and value 2 = 4, it will return 16
-sqrt(value 1); will return the square root of the number provided
-abs(value 1); is for absolute value
-round(x); will return the rounded value
-ceil(x); will return the ceiling value or will always round up
-floor(x); will return the floor value or will always round down
-
-to see more references for the cmath library go to: https://www.cplusplus.com/reference/cmath/
-
-Conditionals
-1. If Statement: do something if the given condition is true.
-if (condtion)
+Loops/iteration is happens if the condition given was true and won't do that if it was false.
+An infinite loop is when the condition is always true
+1. While loop
+while (condition)
+{// statement goes here.}
+2. do while loop is a while loop but first it executes some statement. It atleast gets executed at least once unlike while loop which might not get even executed once
+do
 {
-    // execute this block of code
-}
-comparison operators: > < <= >= != and ==. == is for equality and != for non equality
-2. If-Else Statement: do something if the given condition is true, if not do the else Statement.
-if (condtion)
-{
-    // execute this block of code
-}
-else
-{
-    // execute this block of code
-}
-3. Else-If Statement:
-if (condtion)
-{
-    // execute this block of code
-}
-if (another condtion)
-{
-    // execute this block of code
-}
-else
-{
-    // execute this block of code
-}
-4. Switch Statement: alternative to using else-if, compares one value against matching cases
-switch (variable to be compared)
-{
-    case 'Value which is being compared to the variable:
-        // execute this block of code
-        break;
-    case 'Value which is being compared to the variable:
-        // execute this block of code
-        break;
-    default:
-        // execute this block of code
-        break;
-}
-5. Ternary Operators ?: = replacemtent to an if/else statement
-condtion ? executes if true : executes if true;
+    // statement
+}while (condition); // semicolon is needed at the end
+3. for loop: is a kind of loop almost the same as a while loop, but mostly used for a known amount, for iterating and even use the letter i for iterrating
+for (int i = 0; i <= value; i++// it can be increasing or decreasing)
+{ //statement}
+4. Nested Loops: are loops within another loop
 
-x % 2 ? std::cout << "Odd" : std::cout << "Even";
-bool y = true;
-y ? "True" : "False";
+Jump statements or loop control statements: they are used to alter the normal flow of a loop
+1. Break: is used to break out of a loop, or a swith as seen in the previous examples for switches
+2. Continue: skips the current iteration
+3. Goto: Jumps a labeled statement within the same function
+usage is as follows
+Example: goto flower; 
+statements;
+flower;
+// this block of code will jump over statements; to flower
+4. Return: Exits from a function and optionally returns a value
 
-Logical Operators: are used to perform logical or boolean operations.
-&& is used as logical AND. Which means both conditions must be true for the overall to be true
-A	    B	    A && B
-true	true	true
-true	false	false
-false	true	false
-false	false	false
-|| is used as logical OR. Which means both conditions must be false for the overall to be regarded as false
-A	    B	    A || B
-true	true	true
-true	false	true
-false	true	true
-false	false	false
+Random numbers: you need to use rand(). They are not truly random (but close) which are called pseudo-random
+int num = rand(); // will give you between 0 and 32,767 which is the RAND_MAX
 
-! is used as logical NOT. It makes the boolean value have the oposite value. Meaning if true then false, if false then true.
-A	    !A
-true	false
-false	true
+Functions: are a block of reusable code.
+[return Type] [function Name]({parameters if necessary})
+{//functionality goes here
+return something;//if the return Type isn't void}
+void simply means it doesn't have a return type
 
-Useful string methods
-string name;
-name.length(); will return length of string
-name.empty(); checks if the string is empty or not. If empty it will return true.
-name.clear(); will clear the value of a string variable.
-name.append("string value"); will append or add `string value` to the name variable
-name.at(index) will return the character at the given index
-name.insert(index, "message"); it will insert the message at the index you provided
-name.find(' '); will return the index of the value you inserted in the Parentheses
-name.erase(starting index,end index); will erase from the starting index upto the end index. Doesn't include the end index thou.
-
-to see more references for the string methods go to: https://www.cplusplus.com/reference/string/string/
