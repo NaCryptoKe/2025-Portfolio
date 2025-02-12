@@ -1,159 +1,184 @@
-# C++ Primer Short Notes
+# **C++ Primer: Short Notes** 🚀
 
-# Chapter 1: Getting Started
-
+## **Chapter 1: Getting Started**
 ---
 
-## Writing a simple C++ Program
+### **Writing a Simple C++ Program** 🖥️
+A C++ program contains **one or more functions**, and one of them **must** be the `main` function. The `main` function is the **entry point** of the program.
 
-A C++ program contains 1 or more functions, one must be the `main` function. The `main` function is the entry of the program.
-
-```
-int main()
-{
-  return 0;
+```cpp
+int main() {
+    return 0;
 }
 ```
 
-A `function` definition has four elements, **returntype** (int), **function name** (main), **parameter list** enclosed in parenthesis and might be empty, as in the case for the main function, **function body** the content of the function in between the curly braces.
+A **function** definition consists of four elements:
+1. **Return type** (`int` in this case)
+2. **Function name** (`main`)
+3. **Parameter list** (enclosed in parentheses, which can be empty)
+4. **Function body** (enclosed in curly braces `{}`)
 
-C++ is a **case sensetive**, and uses **;** to indicate the end of a statement.
+🔹 **C++ is case-sensitive** and uses **`;` (semicolon)** to indicate the end of a statement.
 
 ---
 
-## A first look at Input/Output
-C++ doesn't have a defined statement so it uses an extensive **standard library**. The library in this case is the **iostream** library. The **iostream** is composed of two types, **istream** and **ostream**. A **stream** is a sequence of characters read or written to an **IO**(input output) device.
-The **iiostream** library defines four IO objects. To handle input, **istream** named `cin`. Refered to us as **standard input**. For output we use the **ostream** name `cout`. Also named as the **standard output**. There are two other **ostream** named **cerr** `(used for standard error)` and **clog** `(general information)`
-Usage:
-```
+### **A First Look at Input/Output** 📝
+C++ does not have built-in input/output (I/O) statements. Instead, it uses an **extensive standard library**, specifically the **iostream** library.
+
+The **iostream** library defines four I/O objects:
+- **`cin`** (standard input - `istream`)
+- **`cout`** (standard output - `ostream`)
+- **`cerr`** (standard error - `ostream`)
+- **`clog`** (log messages - `ostream`)
+
+Example usage:
+```cpp
 #include <iostream>
-int main()
-{
-  std::cout << "Enter two numbers:" << std::endl;
-  int v1 = 0, v2 = 0;
-  std::cin >> v1 >> v2;
-  std::cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << std::endl;
-  return 0;
+int main() {
+    std::cout << "Enter two numbers: " << std::endl;
+    int v1 = 0, v2 = 0;
+    std::cin >> v1 >> v2;
+    std::cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << std::endl;
+    return 0;
 }
 ```
-
-The output is as follows:
-**Enter two numbers:**
-Waits for the user the two numbers denoted by `v1` and `v2`
-The user inputs: **3 7**
-On a newline the program produces the following output
-**The sum of 3 and 7 is 10**
-
-**#include <iostream>** tells the compiler that we want to use the **iostream** library.
-**std::endl** is called a `manipulator`and has the effect of starting a new line
-
-The prefix **std::** indicates that the names following it are defined the namespace named **std**
-**Namespace** is used to avoid  inadvertent collisions between the names we define and uses of those same names inside a library.
-The **::** sign is called the `scope operator`
+📌 **Key Points:**
+- `#include <iostream>` tells the compiler to use the **iostream** library.
+- `std::endl` moves to a new line.
+- `std::` is a **namespace qualifier**, used to avoid name conflicts.
+- `::` is called the **scope resolution operator**.
 
 ---
 
-## A word about comments
-**Comments** are non executable line on the code, used for describe or write a message on. There are two types of comments: **Inline** used for commenting at the end of a statement usind the `\\` sign; and a **Multiline** comment which can span more than one line, and is mostly used to describe what a block of code does rather than one statement.
+### **A Word About Comments** 🗨️
+**Comments** are **non-executable** lines in the code used for explanations or notes.
 
-```
+Types of comments:
+1. **Single-line comment** → `// This is a comment`
+2. **Multi-line comment** → `/* This is a multi-line comment */`
+
+Example:
+```cpp
 #include <iostream>
 /*
-* Simple main function:
-* Read two numbers and write their sum
-*/
-int main()
-{
-  // prompt user to enter two numbers
-  std::cout << "Enter two numbers:" << std::endl;
-  int v1 = 0, v2 = 0; // variables to hold the input we read
-  std::cin >> v1 >> v2; // read input
-  std::cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << std::endl;
-  return 0;
+ * Simple main function:
+ * Reads two numbers and writes their sum
+ */
+int main() {
+    // Prompt user to enter two numbers
+    std::cout << "Enter two numbers: " << std::endl;
+    int v1 = 0, v2 = 0; // Variables to hold input values
+    std::cin >> v1 >> v2; // Read input
+    std::cout << "The sum of " << v1 << " and " << v2 << " is " << v1 + v2 << std::endl;
+    return 0;
 }
 ```
-
-**N.B** Comments don't nest
-
----
-
-## Flow of control
-Statements often get executed sequentially: when they avoid that in some condition, those conditions are know as **Flow Control**
-Flow Controls are the following: **Iterative** (while, for, do-while), **Conditionals** (if, else-if, swithc, ternary operations), **Jump Statements** (break, continue, goto, return)
+⚠️ **Note:** Comments do NOT nest!
 
 ---
 
-# Variables and Basic Types
-**Types** determine the meaning of a data how we can use it.
+### **Flow of Control** 🔀
+Statements in C++ execute sequentially unless controlled by **Flow Control Statements**:
+- **Iterative Statements:** `while`, `for`, `do-while`
+- **Conditional Statements:** `if`, `else-if`, `switch`, ternary (`? :`)
+- **Jump Statements:** `break`, `continue`, `goto`, `return`
 
 ---
 
-## Primitive Built-in Types
-**Primitive Data Type** are built-in data types that represent the simples and most directly supported by the language.
-It is divided in to two:
-  - Arithmetic Types
-  - Special character called **void**
+## **Variables and Basic Types** 📊
+Data types define the **meaning of data** and how we can use it.
 
-**void** type doesn't have no associated value and is mostly used for return type on `functions`
+### **Primitive Built-in Types** 🔢
+Built-in data types in C++ represent fundamental values. They are classified into:
+1. **Arithmetic Types**
+2. **Special type:** `void` (no associated value, mainly used as a function return type)
 
-### Arithmetic Types
-The **Arthimetic Types** are divided into two, which are **integral types** (character, boolean, and numbers without floating numbers), and **floating-point types**
+#### **Arithmetic Types**
+Arithmetic types are further divided into **integral types** (characters, boolean, integers) and **floating-point types**.
 
-| Type  | Meaning | Minimum Size |
-|:------------|:------------:|------------:|
-| bool | boolean | N/A |
-| char | character | 8 bits |
-| wchar_t | wide character | 16 bits |
-| char16_t | unicode character | 16bits |
-| char32_t | unicode character | 32 bits |
-| short | short integer | 16 bits |
-| int | integer | 16 bits |
-| long | long integer | 32 bits |
-| long long | long integer | 64 bits |
-| float | single-precision floating-point | 6 significant digits |
-| double | double-precision floating-point | 10 significant digits |
-| long double | extended-precision floating-point | 10 significant digits |
+| **Type**      | **Meaning**                         | **Minimum Size**  |
+|--------------|---------------------------------|----------------|
+| `bool`       | Boolean (true/false)            | N/A            |
+| `char`       | Character                       | 8 bits         |
+| `wchar_t`    | Wide character                  | 16 bits        |
+| `char16_t`   | Unicode character               | 16 bits        |
+| `char32_t`   | Unicode character               | 32 bits        |
+| `short`      | Short integer                   | 16 bits        |
+| `int`        | Integer                         | 16 bits        |
+| `long`       | Long integer                    | 32 bits        |
+| `long long`  | Very long integer               | 64 bits        |
+| `float`      | Single-precision float          | 6 significant digits |
+| `double`     | Double-precision float          | 10 significant digits |
+| `long double`| Extended-precision float        | 10+ significant digits |
 
-**size of (type/variable)** is used for determining the size of the data type using bytes.
-
-Most of the datatypes with in the table are used for supporting internationalization.
-
-The basics are `int`, `float`, `double`, `char`, `bool`.
-**bool** stores true or false values. **char** stores a character using its `ASCII CODE`. **int** for non-floating integers. **float** and **double** for floating integers.
-
+🔍 **To check the size of a type:**
+```cpp
+std::cout << "Size of int: " << sizeof(int) << " bytes" << std::endl;
+```
 ---
 <details>
 <summary> <strong>MACHINE-LEVEL REPRESENTATION OF THE BUILT-IN TYPES</strong> </summary>
-Computers store data as a sequence of **bits**, each holding a `0` or `1`, such as
-      00011011011100010110010000111011 ...
-Most computers deal with memory as chunks of bits of sizes that are powers of `2`. The smallest chunk of addressable memory is referred to as a **byte**. The basic unit of storage, usually a small number of bytes, is referred to as a **word**. In C++ a byte has at least as many bits as are needed to hold a character in the machine’s basic character set. On most machines a byte contains 8 bits and a word is either 32 or 64 bits, that is, 4 or 8 bytes.
-Most computers associate a number (called an “address”) with each byte in memory. On a machine with 8-bit bytes and 32-bit words, we might view a word of memory as follows:
-  - 736424 = 0 0 1 1 1 0 1 1
-  - 736425 = 0 0 0 1 1 0 1 1
-Here, the byte’s address is on the left, with the 8 bits of the byte following the address.
-We can use an address to refer to any of several variously sized collections of bits starting at that address. It is possible to speak of the word at address 736424 or the byte at address 736427. To give meaning to memory at a given address, we must know the type of the value stored there. The type determines how many bits are used and how to interpret those bits.
-If the object at location 736424 has type float and if floats on this machine are stored in 32 bits, then we know that the object at that address spans the entire word. The value of that float depends on the details of how the machine stores floatingpoint numbers. Alternatively, if the object at location 736424 is an unsigned char on a machine using the ISO-Latin-1 character set, then the byte at that address represents a semicolon.
+
+Computers store data as a sequence of **bits**, each holding a `0` or `1`, such as:
+```
+00011011011100010110010000111011 ...
+```
+Most computers manage memory in **chunks of bits** that are powers of `2`. The smallest addressable chunk is called a **byte**, while the basic unit of storage (typically a small number of bytes) is referred to as a **word**.
+
+🔹 **Byte**: The smallest unit of memory, typically 8 bits.  
+🔹 **Word**: A storage unit, usually 4 or 8 bytes (32 or 64 bits).
+
+In C++, a **byte** contains at least enough bits to hold a character in the machine’s basic character set. Most modern machines use **8-bit bytes** and **32-bit or 64-bit words**.
+
+### **Memory Representation Example**
+On a system with 8-bit bytes and 32-bit words, memory may be structured like this:
+```
+  736424 = 0 0 1 1 1 0 1 1
+  736425 = 0 0 0 1 1 0 1 1
+```
+Here, the **byte’s address** is on the left, with its **8-bit content** following.
+
+### **Addressing Memory**
+A memory address can refer to various-sized collections of bits. For example:
+- A **word** at address `736424` (assuming 32-bit words) spans 4 bytes.
+- A **byte** at address `736427` refers to an 8-bit value.
+
+To understand the **meaning** of a memory location, we must know its **data type**:
+- If the object at `736424` is of type `float` (stored in 32 bits), it spans the entire word.
+- If the object at `736424` is an **unsigned char** (on a system using ISO-Latin-1), the byte at that address represents a **semicolon (`;`)**.
+
+💡 **Key Takeaways:**
+- Memory consists of bytes, grouped into words.
+- Addresses point to specific memory locations.
+- The type of data determines the size and interpretation of stored bits.
+
 </details>
 ---
 
-#### **Signed and Unsigned Types**
-Except for `bool` and the extended char types, the integral types might be signed or unsigned.
-**Signed** means it holds both negative and positive values, while **Unsigned** means it only hold the positive side.
-To make a data type unsigned we use the the keyword `unsigned`
-```
-unsigned int x = 0; // this is an unassigned int
-int y = 0; // this is a signed int
+### **Signed and Unsigned Types** ➕➖
+🔹 **Signed types** can hold **negative and positive values**.  
+🔹 **Unsigned types** can hold **only positive values**.  
+
+To declare an unsigned variable:
+```cpp
+unsigned int x = 0; // Unsigned integer
+int y = -5;         // Signed integer
 ```
 
-Unlike the rest of the integral types, the `char` data type is divide into three:
-  - char
-  - unsigned char &
-  - signed char
+📌 **Special case for `char` type:**
+- `char`
+- `unsigned char`
+- `signed char`
 
 ---
 
-# Rules of thumb
-- Use an unsigned type when you know that the values cannot be negative.
-- Use int for integer arithmetic. short is usually too small and, in practice, long often has the same size as int. If your data values are larger than the minimum guaranteed size of an int, then use long long.
-- Do not use plain char or bool in arithmetic expressions. Use them only to hold characters or truth values. Computations using char are especially problematic because char is signed on some machines and unsigned on others. If you need a tiny integer, explicitly specify either signed char or unsigned char.
-- Use double for floating-point computations; float usually does not have enough precision, and the cost of double-precision calculations versus singleprecision is negligible. In fact, on some machines, double-precision operations are faster than single. The precision offered by long double usually is unnecessary and often entails considerable run-time cost.
+### **Rules of Thumb** 🎯
+✅ Use **unsigned types** when values cannot be negative.  
+✅ Use **int** for arithmetic; avoid `short` and `long` unless necessary.  
+✅ Avoid using **plain `char` or `bool` in arithmetic expressions**.  
+✅ Use **double** for floating-point calculations (`float` may lack precision).  
+✅ `long double` is rarely needed and may slow down computations.  
+
+---
+🎉 **End of Notes!** Keep coding and exploring C++! 🚀🔥
+
