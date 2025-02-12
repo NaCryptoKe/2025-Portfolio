@@ -153,6 +153,7 @@ To understand the **meaning** of a memory location, we must know its **data type
 - The type of data determines the size and interpretation of stored bits.
 
 </details>
+
 ---
 
 ### **Signed and Unsigned Types** ➕➖
@@ -179,6 +180,4 @@ int y = -5;         // Signed integer
 ✅ Use **double** for floating-point calculations (`float` may lack precision).  
 ✅ `long double` is rarely needed and may slow down computations.  
 
----
-🎉 **End of Notes!** Keep coding and exploring C++! 🚀🔥
 
