@@ -19,8 +19,7 @@ Build a strong foundation in C++ while progressively working on practical projec
 - Arithmetic and conditional operators  
 - Control structures (`for`, `while` loops)  
 - Functions and arrays  
-- Debugging basics (IDE tools, `cout`)  
-- File I/O (`ifstream`, `ofstream`)
+- Debugging basics (IDE tools, `cout`)
 
 #### ✅ **Completed Projects:**
 1. Unit Converter (miles ↔ kilometers)  
@@ -32,8 +31,7 @@ Build a strong foundation in C++ while progressively working on practical projec
 7. Validation Function (`bool isValidNumber(string input)`)  
 8. Array Reversal  
 9. Average Score Calculator  
-10. Password Strength Checker  
-11. File handling projects (Write, Read, Append, Word Counter)  
+10. Password Strength Checker 
 
 #### 🔜 **Next Steps for February:**
 - **Deep Dive into OOP Concepts**
